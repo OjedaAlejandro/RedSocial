@@ -1,0 +1,18 @@
+h1{
+    color: #22577A !important;
+    font-size: 4rem !important;
+    margin-bottom: 50px !important;
+}
+
+h2{
+    color: #38A3A5;
+    margin-left: 50px;
+}
+.container{
+    box-shadow: 1px 5px 60px 0px #100a886b;
+
+}
+
+img{
+    height: 60vh !important;
+}

@@ -1,0 +1,17 @@
+<div class="form-container">
+    <p class="title">Registro</p>
+    <form class="form"  [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <input type="email" class="input" placeholder="username" formControlName="username">
+        <span [hidden]="!formulario.get('username')?.touched || formulario.get('username')?.valid" class="alerta">Este campo es obligatorio</span>
+
+      <input type="email" class="input" placeholder="Email" formControlName="email">
+      <span [hidden]="!formulario.get('email')?.touched || formulario.get('email')?.valid" class="alerta">Este campo es obligatorio</span>
+
+      <input type="password" class="input" placeholder="Password" formControlName="password" >
+      <p class="page-link">
+      <span [hidden]="!formulario.get('password')?.touched || formulario.get('password')?.valid" class="alerta">Este campo es obligatorio</span>
+        <span class="page-link-label">.</span>
+      </p>
+      <button class="form-btn" type="submit" [disabled]="formulario.invalid">Enviar</button>
+    </form>
+  </div>

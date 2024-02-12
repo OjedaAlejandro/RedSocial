@@ -1,0 +1,5 @@
+/node_modules
+.env
+/uploads
+app-red-social-80b47-firebase-adminsdk-jjujq-df70d54238.json
+Dockerfile

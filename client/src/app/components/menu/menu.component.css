@@ -1,0 +1,17 @@
+*{
+    color: #38A3A5;
+    font-size: 1.2rem;
+}
+
+.nav{
+    position:absolute !important;
+    z-index: 1 !important;
+
+    opacity: 0.8;
+    border-radius: 20px;
+}
+@media screen and (max-width: 600px) {
+    .nav{
+        border-radius:10px
+    }
+}

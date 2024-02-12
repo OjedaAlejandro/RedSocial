@@ -1,0 +1,42 @@
+
+
+        <div class="presentacion ">
+            <div class=" row ">
+                <div class="col down">
+                    <h2>{{Response?.username}}</h2>
+                    <div class="contImg"[ngStyle]="{'background-image': 'url(' +Response?.img+ ')'}">
+
+                        <div *ngIf="!Response?.img" class="TieneImg">
+                         <label for="archivo" class="label-file">
+                            <span>Elegir archivo</span>
+                            <input type="file" id="archivo" class="input-file" (change)="onFileSelected($event)"/>
+                          </label>
+                         <button (click)="onUpload()" class="btn boton">Subir Imagen</button>
+                        </div>
+                  </div>
+                </div>
+                <div class="info col down">
+                    <div>
+                        <p><span>Nombre: </span>{{Response?.name}}</p>
+                        <p><span>Edad: </span>{{Response?.year}}</p>
+                        <p><span>Sexo: </span>{{Response?.sex}}</p>
+                    </div>
+                </div>
+    
+            </div>
+            <div class="description">
+                <h3>Descripción</h3>
+                @if (!Response?.description) {
+                    <form [formGroup]="formulario">
+                        <textarea name="" id="" cols="30" rows="5" formControlName="description" class="form-control"></textarea>
+                        <br>
+                        <input type="submit" value="Enviar" (click)="EnviarDescription()" class="btn boton">
+                    </form>
+                }@else {
+                    <p>{{Response?.description}}</p>
+                }
+            </div>
+        </div>
+
+
+        

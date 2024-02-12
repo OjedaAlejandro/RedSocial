@@ -1,0 +1,27 @@
+<div class="form-container">
+    <p class="title">Registro</p>
+    <form class="form"  [formGroup]="formulario" (ngSubmit)="OnSubmit()">
+        <input type="text" class="input" placeholder="Nombre" formControlName="name" required>
+        <span [hidden]="!formulario.get('name')?.touched || formulario.get('name')?.valid" class="alerta">Este campo es obligatorio</span>
+
+        <input type="text" class="input" placeholder="Apellido" formControlName="lastname" required>
+        <span [hidden]="!formulario.get('lastname')?.touched || formulario.get('lastname')?.valid" class="alerta">Este campo es obligatorio</span>
+      <input type="number" class="input" placeholder="Edad" formControlName="year">
+      <span [hidden]="!formulario.get('year')?.touched || formulario.get('year')?.valid" class="alerta">Este campo es obligatorio</span>
+
+      <select class="form-select input" aria-label="Default select example" formControlName="sex">
+        <option value="Masculino" selected>Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+      <span [hidden]="!formulario.get('sex')?.touched || formulario.get('sex')?.valid" class="alerta">Este campo es obligatorio</span>
+
+      <button class="form-btn" type="submit" [disabled]="formulario.invalid" >Siguiente</button>
+    </form>
+    <p class="sign-up-label">
+        ¿Ya estás registrado??<span class="sign-up-link" [routerLink]="['/login']">Login</span>
+    </p>
+  </div>
+  
+
+
+

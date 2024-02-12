@@ -1,0 +1,29 @@
+
+<div class="contPresentacion ">
+    <div class="presentacion ">
+        <div class="row">
+            <div class="col down">
+                <h2>{{Response?.username}}</h2>
+                <div class="contImg"[ngStyle]="{'background-image': 'url(' +Response?.img+ ')'}">
+            </div>
+            </div>
+            <br>
+            <div class="info col down">
+                <div>
+                    <p><span>Nombre: </span>{{Response?.name}}</p>
+                    <p><span>Edad: </span>{{Response?.year}}</p>
+                    <p><span>Sexo: </span>{{Response?.sex}}</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="description"> 
+            @if (Response?.description) {
+                <h3>Descripción</h3>
+                <p>{{Response?.description}}</p>
+            }
+        </div>
+    </div>
+    
+</div>
+

@@ -1,0 +1,22 @@
+<div class="form-container">
+    <p class="title">Login</p>
+    <form class="form"  [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <input type="email" class="input" placeholder="Email" formControlName="email">
+      <span [hidden]="!formulario.get('email')?.touched || formulario.get('email')?.valid" class="alerta">Este campo es obligatorio</span>
+
+      <input type="password" class="input" placeholder="Password" formControlName="password" >
+      <span [hidden]="!formulario.get('password')?.touched || formulario.get('password')?.valid" class="alerta">Este campo es obligatorio</span>
+      @if (prueba) {
+        <span  class="alerta">Error en email/Contraseña</span>
+      }
+
+      <p class="page-link">
+        <span class="page-link-label">Forgot Password?</span>
+      </p>
+      <button class="form-btn" type="submit"[disabled]="formulario.invalid" >Log in</button>
+    
+    </form>
+    <p class="sign-up-label">
+      ¿No tienes cuenta?<span class="sign-up-link" [routerLink]="['/register_data']">Registrarse</span>
+    </p>
+  </div>
